@@ -1,0 +1,18 @@
+body {
+    color: rgb(68, 68, 68);
+    background-color: whitesmoke;
+}
+
+fieldset {
+    color: rgb(53, 53, 53);
+    background-color: rgb(255, 255, 255);
+    border: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+button {
+    color: rgb(59, 59, 59);
+    background-color: white;
+    height: 25px;
+    border-radius: 7px;
+}
