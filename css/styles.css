@@ -1,18 +1,73 @@
 body {
     color: rgb(68, 68, 68);
     background-color: whitesmoke;
+    font-family: "Montserrat", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
 }
 
 fieldset {
     color: rgb(53, 53, 53);
     background-color: rgb(255, 255, 255);
     border: rgb(255, 255, 255);
-    border-radius: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 1%;
+    padding: 1%;
 }
 
+
+
 button {
-    color: rgb(59, 59, 59);
+    border-radius: 5px;
+    color: white;
+    background-color: teal;
+    border-color: teal;
+    margin: 5px;
+    padding: 5px;
+}
+
+div[data-type='post'] {
+    color: rgb(53, 53, 53);
     background-color: white;
-    height: 25px;
-    border-radius: 7px;
+    border: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 1%;
+    margin: 1%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+img[data-type='image'] {
+    width: auto;
+    max-width: 98%;
+    margin: 1%;
+}
+
+video[data-type='video'] {
+    width: auto;
+    max-width: 98%;
+    margin: 1%;
+}
+
+div[data-type='media'] {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+div[data-type='likes'] {
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+input {
+    width: 97%;
+    margin-left: 1%;
+    margin-right: 2%;
+    height: 20px;
 }

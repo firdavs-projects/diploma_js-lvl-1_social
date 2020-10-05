@@ -54,7 +54,7 @@ mediaEl.onchange = evt => {
     const load = {
         onStart: () => {
             if (loadedFileContainer.firstChild) { loadedFileContainer.removeChild(loadedFileContainer.firstElementChild); }
-            loaderEl.style.display = 'block';
+            loaderEl.style.display = 'fixed';
             addEl.disabled = true;
         },
         onFinish: () => {
@@ -64,7 +64,7 @@ mediaEl.onchange = evt => {
         onError: error => {
             console.log(error.message);
             messageError.textContent = 'Соединение с сервером отсутствует. Пожалуйста проверьте подключение к сети и обновите страницу';
-            messageError.style.display = 'block';
+            messageError.style.display = 'fixed';
         },
         onSuccess: data => {
             const attachment = JSON.parse(data);
@@ -336,6 +336,7 @@ function makePostEl(post) {
     newPostEl.appendChild(authorOfPost);
 
     const mediaContainer = document.createElement('div');
+    mediaContainer.dataset.type='media';
     newPostEl.appendChild(mediaContainer);
     makeMedia(post.attachment, mediaContainer);
 
@@ -345,6 +346,7 @@ function makePostEl(post) {
     newPostEl.appendChild(textOfPost);
 
     const likesContainer = document.createElement('div');
+    likesContainer.dataset.type='likes';
     likesContainer.textContent = 'Нравится: ❤️ ';
     newPostEl.appendChild(likesContainer);
 
@@ -399,15 +401,15 @@ function makeMedia(dataMedia, container) {
     }
     if (dataMedia.type === 'video') {
         const videoEl = document.createElement('video');
+        videoEl.dataset.type='video';
         videoEl.controls = true;
         videoEl.src = dataMedia.path;
-        videoEl.height = 500;
         container.appendChild(videoEl);
     }
     if (dataMedia.type === 'image') {
         const imageEl = document.createElement('img');
+        imageEl.dataset.type='image';
         imageEl.src = dataMedia.path;
-        imageEl.height = 500;
         container.appendChild(imageEl);
     }
 }
